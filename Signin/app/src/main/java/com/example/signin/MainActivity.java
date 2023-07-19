@@ -14,7 +14,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
     FirebaseAuth auth;
-    Button button;
+    Button logout_button, register_event_button, upload_images_button, view_images_button;
     TextView textView;
     FirebaseUser user;
 
@@ -25,7 +25,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         auth = FirebaseAuth.getInstance();
-        button=findViewById(R.id.logout_button);
+        logout_button=findViewById(R.id.logout_button);
+        register_event_button = findViewById(R.id.event_register_button);
+        upload_images_button = findViewById(R.id.upload_images_button);
+        view_images_button = findViewById(R.id.view_images_button);
         textView = findViewById(R.id.user_details);
         user = auth.getCurrentUser();
         if(user == null){
@@ -36,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         else {
             textView.setText(user.getEmail());
         }
-        button.setOnClickListener(new View.OnClickListener() {
+        logout_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
@@ -45,7 +48,25 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+        register_event_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+            }
+        });
 
+        upload_images_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        view_images_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 }
